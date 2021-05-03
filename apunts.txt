@@ -144,3 +144,43 @@ la versió que desitgem, amb el següent comandament:
 +--------------------------------+
 | IGNORAR ARXIUS EN LES VERSIONS |
 +--------------------------------+
+
+Pot donar-se el cas de que a l'hora de treballar en un repositori es vuiga que no tots els fitxers o subdirectoris estiguen
+sota el control de versions i per evitar que per error es puguen afegir git ofereix una opció, la creació d'un fitxer per tal
+d'ignorar els arxius que desitgem, per tal de dur a terme aquesta funció hem de crear el fitxer anomenat '.gitignore' amb el 
+següent comandament:
+
+-sudo nano .gitignore
+
+Dins d'aquest introduirem els fitxers que desitgem, en el cas de fitxers Java hi ha que introduir dins del fitxer el següent:
+
+-*.class
+
+D'aquesta forma tots els fitxers amb extensió '.java' seràn ignorats, i per tal d'ignorar directoris hi ha que introduir la
+següent ordre:
+
+-bin /
+-out /
+
+Aquest fitxer deu estar sincronitzat amb la resta de fitxers del repositori remot.
+
++-------------------------------+
+| BORRAR ARXIUS DE LES VERSIONS |
++-------------------------------+
+
+Per tal de borrar arxius que tinc ja confirmats i que no vuic que continuen en el meu projecte puc utilitzar les següents ordres
+per tal d'eliminar-los, s'ha de tindre a més en conter que s'eliminaràn tant del repositori local com del remot.
+
+Les ordres són les següents:
+
+-git rm [nom_del_fitxer]
+-git rm -r [directori_d'arxius]
+
+-git commit -m "Arxius borrats'
+
+Cal remarcar que al igual que cuan realitzem un canvi o afegim algun fitxer/directori al nostre repositori, hem de fer una actualització amb l'ordre 'git commit -m' per indicar que volem aplicar eixes modificacions.
+
+En canvi podem borrar arxius de la versió, per exemple fitxers que s'ens ha oblidat incloure en el nostre fitxer '.gitignore', per 
+tal d'eliminar aquests hem d'utilitzar la següent ordre:
+
+-git rm -r --cached [nom_del_fitxer o nom_del_directori]
