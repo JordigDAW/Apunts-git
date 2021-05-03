@@ -1,29 +1,31 @@
 +---------------------------------------+
 | COMANDAMENTS PER AL TERMINAL DE LINUX |
 +---------------------------------------+
-ls -->mostra el contingut del directori actual
 
-ls -a --> mostra el contingut del directori actual a més dels fitxers ocults
+-ls -->mostra el contingut del directori actual
 
-pwd --> indica el directori en el que et trobes
+-ls -a --> mostra el contingut del directori actual a més dels fitxers ocults
 
-cd [directori] --> et porta al directori indicat
+-pwd --> indica el directori en el que et trobes
 
-directoris . y .. --> representa el directori actual i el seu pare, de forma respectiva
+-cd [directori] --> et porta al directori indicat
 
-rm [nom_del_archiu] --> elimina l'arxiu
+-directoris . y .. --> representa el directori actual i el seu pare, de forma respectiva
 
-rm -r [nom_del_directori] --> elimina el directori
+-rm [nom_del_archiu] --> elimina l'arxiu
 
-touch [nom_del_fitxer] --> crea un fitxer de text pla
+-rm -r [nom_del_directori] --> elimina el directori
 
-mkdir [nom_del_directori] --> crea un directori buit
+-touch [nom_del_fitxer] --> crea un fitxer de text pla
 
-clear --> neteja el terminal
+-mkdir [nom_del_directori] --> crea un directori buit
+
+-clear --> neteja el terminal
 
 +-------------------------+
 | GIT EN REPOSITORI LOCAL |
 +-------------------------+
+
 El primer pas es situar-se o crear el repositori en el qual volem aplicar el control de versions amb git, en el directori
 en el que desitgem fer-ho es crearà un arxiu ocult anomenat .git el qual conté l'informació necessària per a que Git puga
 registrar les versions.
@@ -84,3 +86,61 @@ comandament:
 
 Una vegada executat aquest comandament es descarregaràn els fitxers i s'intentaràn unir amb amb els fitxers del nostre repositori local, si ens trobem
 en un terminal de Git s'ens obrirà l'editor de text de linux Vi, per poder eixir d'ell hem de premer les tecles :wq!.
+
+Per poder obtindre una copia de del nostre repositori remot podem utilitzar la url del nostre repositori per tal d'obtindre una copia en el nostre
+repositorio local empleant el següent comandament:
+
+-git clone [repositori_remot]
+
+#EXEMPLE
+-git clone https://github.com/JordigDAW/Programacio
+
+Una vegada he clonat el repositori utilitzant la url aquesta s'emmagatzema com un alias anomenat 'origin' per el que la pròxima vegada que desitge
+realitzar una acció que requerixca de l'url puc utilitzar l'alias 'origin'.
+
++------------------------------+
+| GESTIÓ DE REPOSITORIS REMOTS |
++------------------------------+
+
+A més de l'alias anomenat 'origin' que s'ha vist abans podem asignar alias "personalitzats" per dir-ho d'alguna manera, al fi i a la cap la funció
+que tenen es ajudar a l'usuari a que no haja de recordar les url a l'hora de treballar en el terminal amb git.
+
+Per tal de crear un nou alias hem d'emprar el següent comandament:
+
+-git remote add [alias] [directori_remot]
+
+Com a norma general, el repositori en el que es treballa de forma principal s'anomena 'origin'.
+
+-git remote add origin [directori_remot]
+
+Per tal de mostrar els repositoris remots vinculats al local s'utilitza la següent comanda:
+
+-git remote
+
+A més es permet mostrar els repositoris remots i la seva direcció:
+
+-git remote -v
+
++-----------------------------+
+| OBTINDRE VERSIONS ANTERIORS |
++-----------------------------+
+
+Si en algún moment desitgem recuperar una versió antiga del nostre projecte podem consultar el log del nostre repositori local, per cada
+vegada que realitzem una confirmació es crea una versió, per el que si restaurem una versió antiga el nostre repositori local pasara a tindre
+els fitxers i directoris que teniem en aquell entonces.
+
+Amb el següent comandament podem veure un registre amb l'historial de versions
+
+-git log
+-git log --oneline
+
+El segon comandament mostrat a diferencia del primer, mostra un resum de l'historial
+
+Una vegada hem pugut observar l'historial de canvis, es pot observar a l'esquerre un codi generat, amb eixe mateix codi s'ens permet restaurar
+la versió que desitgem, amb el següent comandament:
+
+-git checkout [codi_de_la_versio]
+
++--------------------------------+
+| IGNORAR ARXIUS EN LES VERSIONS |
++--------------------------------+
