@@ -1,0 +1,86 @@
++---------------------------------------+
+| COMANDAMENTS PER AL TERMINAL DE LINUX |
++---------------------------------------+
+ls -->mostra el contingut del directori actual
+
+ls -a --> mostra el contingut del directori actual a més dels fitxers ocults
+
+pwd --> indica el directori en el que et trobes
+
+cd [directori] --> et porta al directori indicat
+
+directoris . y .. --> representa el directori actual i el seu pare, de forma respectiva
+
+rm [nom_del_archiu] --> elimina l'arxiu
+
+rm -r [nom_del_directori] --> elimina el directori
+
+touch [nom_del_fitxer] --> crea un fitxer de text pla
+
+mkdir [nom_del_directori] --> crea un directori buit
+
+clear --> neteja el terminal
+
++-------------------------+
+| GIT EN REPOSITORI LOCAL |
++-------------------------+
+El primer pas es situar-se o crear el repositori en el qual volem aplicar el control de versions amb git, en el directori
+en el que desitgem fer-ho es crearà un arxiu ocult anomenat .git el qual conté l'informació necessària per a que Git puga
+registrar les versions.
+
+El comandament per indicar que volem aplicar el control de versions es el següent:
+-git init
+
+Una vegada hem indicat que volem aplicar un control de versions al nostre fitxer podem veure el estat del mateix, els fitxers
+que s'han anat incluint, els canvis que ha rebut, els fitxers que no estan siguent supervisats, etc.
+
+Per a poder veure l'estat del repositori el comandament que hem d'utilizar es el següent:
+-git status
+
+A mesura que anem creant arxius o modificant-los podem actualitzar el nostre directori per a que es guarden els canvis o que
+s'afegixquen al control de versions, per tal de realitzar aquesta feina hem d'emplear el següent comandament:
+-git add [nom_del_fitxer o nom_del_directori]
+
+En cas de voler afegir tot el contingut del repositori local podem emplear el següent comentari:
+
+-git add .
+
+El fet d'afegir arxius o carpetes no significa que automàticament estiguen sota el control de versions que git ofereix, per a
+indicar-ho hi ha que emprar un comandament més que és el següent:
+
+-git commit -m "Descripció del commit realitzat"
+
+'-m' ens permet afegir un missatge el qual es molt útil per indicar els motius per els quals s'han realitzat eixe commit.
+
+En cas de que estigam realitzant modificacions i hi haja alguna que vuigam desfer abans d'utilitzar el comandament 'git commit -m'
+podem emprar aquest següent comandament el qual farà que es restaure l'estat inicial del repositori/arxiu:
+
+-git reset
+
++-------------------------+
+| GIT EN REPOSITORI REMOT |
++-------------------------+
+
+Una de les ventajes que ofereix el control de versions de git es el poder sincronitzar el nostre repositori en local amb el nostre
+conter de GitHub per poder tindre accés als nostres fitxers desde diferents equips sense tindré la necessitat d'utilitzar sistemes
+d'emmagatzenament com un disc dur o un usb.
+
+Per poder sincronitzar el nostre repositori local amb el remot hem de seguir les següents pautes.
+
+Per obtindre ambdós repositoris sincronitzats(idèntics) hem d'indicar la direcció del repositori remot (url) o un alias en cas d'haverlo
+asignat abans.
+
+El comandament sería el següent:
+
+-git push https://github.com/JordigDAW master
+
+Donat el cas de que treballem amb un equip diferent al local i els canvis que realitzem els pujem al repositori remot, hi ha la possibilitat
+de poder actualitzar el nostre repositori local amb les modificacions anteriorment mencionades.
+
+Per a poder realitzar aquesta actualització hem de descargar els últims canvis per introduir-los al repositori local, per aixó empleem el següent
+comandament:
+
+-git pull [repositori_remot] master
+
+Una vegada executat aquest comandament es descarregaràn els fitxers i s'intentaràn unir amb amb els fitxers del nostre repositori local, si ens trobem
+en un terminal de Git s'ens obrirà l'editor de text de linux Vi, per poder eixir d'ell hem de premer les tecles :wq!.
