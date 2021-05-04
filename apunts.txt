@@ -182,7 +182,8 @@ Les ordres són les següents:
 
 -git commit -m "Arxius borrats'
 
-Cal remarcar que al igual que cuan realitzem un canvi o afegim algun fitxer/directori al nostre repositori, hem de fer una actualització amb l'ordre 'git commit -m' per indicar que volem aplicar eixes modificacions.
+Cal remarcar que al igual que cuan realitzem un canvi o afegim algun fitxer/directori al nostre repositori, hem de fer una actualització
+amb l'ordre 'git commit -m' per indicar que volem aplicar eixes modificacions.
 
 En canvi podem borrar arxius de la versió, per exemple fitxers que s'ens ha oblidat incloure en el nostre fitxer '.gitignore', per 
 tal d'eliminar aquests hem d'utilitzar la següent ordre:
