@@ -79,6 +79,8 @@ El comandament sería el següent:
 
 -git push https://github.com/JordigDAW master
 
+Resumidament, amb aquest comandament actualitzem el nostre repositori remot amb els canvis realitzats en local.
+
 Donat el cas de que treballem amb un equip diferent al local i els canvis que realitzem els pujem al repositori remot, hi ha la possibilitat
 de poder actualitzar el nostre repositori local amb les modificacions anteriorment mencionades.
 
@@ -86,6 +88,8 @@ Per a poder realitzar aquesta actualització hem de descargar els últims canvis
 comandament:
 
 -git pull [repositori_remot] master
+
+Resumidament, amb aquest comandament el que aconseguim es actualitzar el nostre repositori local amb els canvis realitzats en el remot.
 
 Una vegada executat aquest comandament es descarregaràn els fitxers i s'intentaràn unir amb amb els fitxers del nostre repositori local, si ens trobem
 en un terminal de Git s'ens obrirà l'editor de text de linux Vi, per poder eixir d'ell hem de premer les tecles :wq!.
