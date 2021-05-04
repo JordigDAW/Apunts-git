@@ -31,16 +31,19 @@ en el que desitgem fer-ho es crearà un arxiu ocult anomenat .git el qual conté
 registrar les versions.
 
 El comandament per indicar que volem aplicar el control de versions es el següent:
+
 -git init
 
 Una vegada hem indicat que volem aplicar un control de versions al nostre fitxer podem veure el estat del mateix, els fitxers
 que s'han anat incluint, els canvis que ha rebut, els fitxers que no estan siguent supervisats, etc.
 
 Per a poder veure l'estat del repositori el comandament que hem d'utilizar es el següent:
+
 -git status
 
 A mesura que anem creant arxius o modificant-los podem actualitzar el nostre directori per a que es guarden els canvis o que
 s'afegixquen al control de versions, per tal de realitzar aquesta feina hem d'emplear el següent comandament:
+
 -git add [nom_del_fitxer o nom_del_directori]
 
 En cas de voler afegir tot el contingut del repositori local podem emplear el següent comentari:
@@ -93,6 +96,7 @@ repositorio local empleant el següent comandament:
 -git clone [repositori_remot]
 
 #EXEMPLE
+
 -git clone https://github.com/JordigDAW/Programacio
 
 Una vegada he clonat el repositori utilitzant la url aquesta s'emmagatzema com un alias anomenat 'origin' per el que la pròxima vegada que desitge
